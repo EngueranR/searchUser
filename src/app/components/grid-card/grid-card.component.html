@@ -1,11 +1,3 @@
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-  <app-card *ngFor="let person of people" [person]="person"></app-card>
-</div>
-<div class="flex justify-center mt-4">
-  <button
-    (click)="loadMore()"
-    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-  >
-    Load more
-  </button>
+  <app-card *ngFor="let person of persons" [person]="person"></app-card>
 </div>
