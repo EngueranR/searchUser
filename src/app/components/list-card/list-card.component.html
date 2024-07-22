@@ -6,7 +6,7 @@
       class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
     >
       <tr>
-        <th scope="col" class="px-6 py-3">Image</th>
+        <th scope="col" class="px-6 py-3">Picture</th>
         <th scope="col" class="px-6 py-3">Name</th>
         <th scope="col" class="px-6 py-3">Job</th>
         <th scope="col" class="px-6 py-3">Email</th>
@@ -14,8 +14,12 @@
     </thead>
     <tbody>
       <tr
-        *ngFor="let person of persons"
-        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+        *ngFor="let person of persons; let i = index"
+        [ngClass]="{
+          'bg-gray-100 dark:bg-gray-900': i % 2 === 0,
+          'bg-white dark:bg-gray-800': i % 2 !== 0
+        }"
+        class="border-b dark:border-gray-700 transform hover:scale-105 transition-transform duration-200"
       >
         <td class="px-6 py-4">
           <img
