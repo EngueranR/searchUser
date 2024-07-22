@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { UserIdService } from 'src/app/services/users/user-page.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-grid-card',

@@ -1,1 +1,38 @@
-<p>list-card works!</p>
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table
+    class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  >
+    <thead
+      class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+    >
+      <tr>
+        <th scope="col" class="px-6 py-3">Image</th>
+        <th scope="col" class="px-6 py-3">Name</th>
+        <th scope="col" class="px-6 py-3">Job</th>
+        <th scope="col" class="px-6 py-3">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let person of persons"
+        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+      >
+        <td class="px-6 py-4">
+          <img
+            [src]="person.imageUrl"
+            alt="{{ person.firstName }}"
+            class="w-20 h-20 rounded-full"
+          />
+        </td>
+        <th
+          scope="row"
+          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+        >
+          {{ person.firstName }} {{ person.lastName }}
+        </th>
+        <td class="px-6 py-4">{{ person.jobTitle }}</td>
+        <td class="px-6 py-4">{{ person.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
