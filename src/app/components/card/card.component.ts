@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { UserIdService } from 'src/app/services/users/user-id.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -7,11 +6,7 @@ import { UserIdService } from 'src/app/services/users/user-id.service';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent {
-  constructor(private userIdService: UserIdService) {}
+  @Input() person: any;
 
-  ngOnInit() {
-    this.userIdService.getUserById(56190).then((data) => {
-      console.log(data);
-    });
-  }
+  constructor() {}
 }
